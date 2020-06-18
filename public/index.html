@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>jQuery Mobile Fitness Application</title>
+  <link rel="stylesheet" type="text/css" href="https://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css"/> 
+  <script src="https://code.jquery.com/jquery-1.8.2.min.js"> </script>
+  <script src="https://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script> 
+  <script src="./javascripts/main.js"></script>
+  
+ </head>
+ <body>
+<div data-role="page" id="Home">
+
+        <div data-role="header" class= "welcomeHeader" data-theme='b'> 
+           <h1>Fitness 365!!!</h1>
+           <a href="#userInput" data-icon="add">Add Records</a> 
+           <a href="#Results" data-icon="minus">Results</a>
+           <a href="#BMI" data-icon="gear">BMI</a> 
+           <a href="#BmiRecords" data-icon="add">BMI records</a>
+        </div>
+
+        <div data-role="content" data-theme='c'>
+         <h2>Welcome to my fitness application</h2>
+          <div>            
+              <p>
+                 In this application you can keep record of your daily calories intake and calories burned<br>
+                 by entering date, day, calories intake and calories burned. Get started by
+                 <a href ="#userInput">Clicking Here</a><br><br>
+               
+                 In this app you can also calculate your BMI by entering your weight and height.
+                 <a href="#BMI">Click Here</a>
+                 to start now.<br><br>                           
+              </p>
+              <img src="./images/fitness.png" alt="Smiley face" width="200" height="200" >.
+              <img src="./images/fitness2.jpg" alt="Smiley face" width="200" height="200" >.<br>
+              <img src="./images/fitness3.jpg" alt="Smiley face" width="400" height="300" >.
+
+          </div>
+        </div>
+
+        <div data-role="footer" data-theme='a'>
+         <footer>&copy;Copyright Manwinder Singh 2020</footer>
+        </div>
+
+</div>
+
+<div data-role="page" id="userInput">
+
+        <div data-role="header" data-theme='b'> 
+           <h1>Please provide some information....</h1>
+           <a href="#Home" data-icon="home">Home page</a>
+           <a href="#Results" data-icon="minus">Results</a> 
+           <a href="#BMI" data-icon="gear">BMI</a>
+           <a href="#BmiRecords" data-icon="add">BMI records</a>
+        </div>
+
+        <div data-role="content" data-theme='d'>
+         <h1>Daily record keeper</h1>
+         
+         <label for = "date">Date</label>
+         <input type = "text" id = "date" name = "date"><br> 
+          <label for = "day">Day</label>
+         <input type = "text" id = "day" name = "day"><br>              
+      <label for="intake"> How many calories did you eat today?</label>
+      <input type="text" id="intake" name="intake"><br>
+       
+         <label for="burn">How many calories burned today?</label>
+         <input type="text" id="burn" name="burn"><br>
+         <button id="addResult">Click Here for add</button>         
+         <button id="inputClear">Clear and add new record</button>
+         <a href="#Results">Click here to go Results page</a>
+        </div>
+
+        <div data-role="footer"  data-theme='a'>
+         <footer>&copy;Copyright Manwinder Singh 2020</footer>
+        </div>
+</div>
+
+<div data-role="page" id="Results">
+
+            <div data-role="header" data-theme='b'> 
+               <h1>Your fitness results!!!</h1>
+               <a href="#Home" data-icon="home">Home page</a> 
+               <a href="#userInput" data-icon="add">Add Records</a>
+               <a href="#BMI" data-icon="gear">BMI</a> 
+            </div>
+    
+            <div data-role="content" data-theme='d' id="finalResults">
+             <h1>Here are your fitness results: </h1>
+             <li>Index RecordDate Day  Intake CaloriesBurned</li>
+             <ul id="recordList"></ul>             
+            </div>
+    
+            <div data-role="footer"  data-theme='a'>
+               <footer>&copy;Copyright Manwinder Singh 2020</footer>
+            </div>
+    
+</div>
+
+<div data-role="page" id="BMI">
+
+   <div data-role="header" data-theme='b'> 
+      <h1>BMI Calculator</h1>
+      <a href="#Home" data-icon="home">Home page</a>
+      <a href="#Results" data-icon="minus">Fitness Results</a>
+      <a href="#userInput" data-icon="add">User Input</a> 
+      <a href="#BmiRecords" data-icon="add">BMI records</a>
+   </div>
+
+   <div data-role="content" data-theme='d'>
+      <h1>Body Mass Index</h1>
+      <img src="./images/body-mass-index.jpg" alt="Smiley face" width="200" height="200" >.
+      <h3>To get you BMI calculated</h3>      
+      <label for="name">Please enter your name:</label>
+      <input type="text" id="name" name="name"><br>
+      <label for="weight">Please enter your weight in lbs:</label>
+      <input type="text" id="weight" name="weight"><br>
+      <label for="height">Enter your height in inches:</label>
+      <input type="text" id="height" name="height"><br>
+      <button id="submit">Add Record</button>
+      <button id="clear">Clear and add more</button>
+      <a href="#BmiRecords">Click here to go to BMI Records</a>
+   </div> 
+
+   <div data-role="footer"  data-theme='a'>
+    <footer>&copy;Copyright Manwinder Singh 2020</footer>
+   </div>
+
+</div>
+<div data-role="page" id="BmiRecords">
+
+   <div data-role="header" data-theme='b'> 
+      <h1>BMI Records!!!</h1>
+      <a href="#Home" data-icon="home">Home page</a> 
+      <a href="#userInput" data-icon="add">Add Records</a>
+      <a href="#BMI" data-icon="gear">BMI</a> 
+      <a href="#Results" data-icon="minus">Fitness Records</a>
+   </div>
+
+   <div data-role="content" data-theme='d' id="finalResults">
+    <h1>BMI records for people </h1>
+    <li>Index PersonName Weight Height BMI</li>
+    <ul id="bmiList"></ul>
+    <p id = "bmi"></p>             
+   </div>
+
+   <div data-role="footer"  data-theme='a'>
+      <footer>&copy;Copyright Manwinder Singh 2020</footer>
+   </div>
+
+</div>
+
+ </body> 
+ </html> 
